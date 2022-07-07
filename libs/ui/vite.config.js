@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import solidPlugin from 'vite-plugin-solid';
-import { name, version } from './package.json';
+import { name, version, peerDependencies } from './package.json';
 
 export default defineConfig({
   plugins: [solidPlugin()],
@@ -15,5 +15,13 @@ export default defineConfig({
     outDir: './lib',
     target: 'esnext',
     polyfillDynamicImport: false,
+    rollupOptions: {
+      external: [
+        ...Object.keys(peerDependencies),
+        "solid-js",
+        "solid-js/web",
+        "solid-js/store",
+      ],
+    },
   },
 });

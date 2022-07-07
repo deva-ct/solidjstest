@@ -1,0 +1,11 @@
+{
+  "name": "solidjstest",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "libs\\ui",
+    "apps\\demo"
+  ]
+}
